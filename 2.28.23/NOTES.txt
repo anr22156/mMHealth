@@ -1,0 +1,18 @@
+--Command for setting path:
+	Set-Location -Path "---"
+
+Command for importing data to MongoDB:
+	mongoimport --db PrenatalTracker --collection 2.10.23 --file "---" --jsonArray --maintainInsertionOrder
+In bulk:
+$databaseName = "<database_name>"
+$collectionName = "<collection_name>"
+$jsonFilesFolder = "C:\Users\nitar\Desktop\2.19.23\Samples"
+
+$jsonFiles = Get-ChildItem $jsonFilesFolder -Filter *.json
+
+foreach ($jsonFile in $jsonFiles) {
+    & mongoimport --db $databaseName --collection $collectionName --file $jsonFile.FullName --jsonArray --maintainInsertionOrder
+}
+
+Command for training model:
+	python train.py -ds 2.10.23
