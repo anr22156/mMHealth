@@ -10,10 +10,11 @@ mongodb = {
 }
 
 serial = {
-    'port': '/dev/ttyUSB0',
+    'port': '',
     'baud_rate': 9600    
 }
 
+# The names of the files that the model, etc. will save to once trained
 model = {
     'model_file_name': 'sample_data_PrenatalTracker.h5',
     'sklearn_scaler_file_name': 'sample_data_scaler.save',
