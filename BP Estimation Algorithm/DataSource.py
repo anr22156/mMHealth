@@ -9,6 +9,8 @@ from enum import Enum
 
 # In[ ]:
 
+# Class containing all of the data collection records being used to train the algorithm
+# These records can be found in the folder "JSONData"
 
 class DataSource(Enum):
     rec_212_T = "rec_212_T"
@@ -511,16 +513,3 @@ class DataSource(Enum):
     rec_458_T = "rec_458_T"
     rec_473_T = "rec_473_T"
     rec_173_T = "rec_173_T"
-    
-    Alexis1 = "Alexis1"
-    Alexis2 = "Alexis2"
-    Alexis3 = "Alexis3"
-    Emma1 = "Emma1"
-    Emma2 = "Emma2"
-    Emma3 = "Emma3"
-    Laura1 = "Laura1"
-    Laura2 = "Laura2"
-    Laura3 = "Laura3"
-    Shreya1 = "Shreya1"
-    Shreya2 = "Shreya2"
-    Shreya3 = "Shreya3"
