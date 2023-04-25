@@ -29,7 +29,8 @@ warnings.filterwarnings('ignore')
 
 # In[ ]:
 
-
+# In PowerShell, specify the data source that you wish to test
+# note: the source must be listed in "DataSource" and "SensorTypeDatasourcemap"
 argparse = argparse.ArgumentParser()
 argparse.add_argument("-ds", "-- data-source", required=True, dest="data_source", type=str)
 args = vars(argparse.parse_args())
@@ -65,7 +66,7 @@ new_df = new_df.replace([np.inf, -np.inf], np.nan).dropna()
 
 # In[ ]:
 
-
+# Load in the saved model, etc.
 scaler = joblib.load(config.model['sklearn_scaler_file_name'])
 regressor = joblib.load(config.model['model_file_name'])
 
