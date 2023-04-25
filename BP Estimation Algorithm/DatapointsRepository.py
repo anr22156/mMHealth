@@ -14,6 +14,7 @@ from SensorTypeDatasourceMap import SensorTypeDatasourceMap
 
 # In[ ]:
 
+# Defining the class to access the data collections stored locally in MongoDB
 
 class DatapointsRepository:
     def __init__(self, mongo_client: MongoClient, sensor_type_datasource_map: SensorTypeDatasourceMap) -> None:
@@ -37,7 +38,8 @@ class DatapointsRepository:
             #filter(
             #lambda dp: True if all(sensor_type in dp for sensor_type in sensor_types) else False, cursor)
         #)
-        
+    
+    # "PrenatalTracker" is the name of the database in MongoDB    
     def __get_client(self, datasource: str):
         return self.__mongo_client['PrenatalTracker'][datasource]
 
