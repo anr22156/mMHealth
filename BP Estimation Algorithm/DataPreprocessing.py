@@ -1,11 +1,7 @@
-import pymongo
 import pandas as pd
 import itertools
 import scipy
-import pymongo
 import argparse
-import matplotlib
-matplotlib.use('tkagg')
 
 import config
 from container import Container
@@ -13,13 +9,11 @@ from DataSource import DataSource
 
 import preprocessing_methods1
 
-#client = pymongo.MongoClient("mongodb://localhost:27017/")
-#db = client['PrenatalTracker']
 
-#collections = db.list_collection_names()
+# Function that completes all of the preprocessing and feature detection methods for a data collection
+# Returns a dataframe with all of the features that have been extracted
 
 def process_docs(collection_name):
-    #collection = db[collection_name]
     
     container = Container()
     dataframe = container.prepared_data_provider().get(collection_name)
@@ -36,11 +30,3 @@ def process_docs(collection_name):
     df = preprocessing_methods1.features(df_init,PPG_norm)
     
     return df
-
-
-#dataframes = []
-#for collection_name in collections:
-    #dataframes.append(process_docs(collection_name))
-    
-
-#combined_df = pd.concat(dataframes, ignore_index=True)
